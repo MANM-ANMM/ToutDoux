@@ -112,7 +112,8 @@ CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/ToutDoux
 //Path to a program.
 CMAKE_LINKER:FILEPATH=D:/msys64/mingw64/bin/ld.exe
 
-CMAKE_MAKE_PROGRAM:FILEPATH=mingw32-make
+//Path to a program.
+CMAKE_MAKE_PROGRAM:FILEPATH=D:/msys64/mingw64/bin/mingw32-make.exe
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -248,15 +249,6 @@ CMAKE_STRIP:FILEPATH=D:/msys64/mingw64/bin/strip.exe
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-Project_BINARY_DIR:STATIC=D:/Data/Document/Cpp/ToutDoux/bin
-
-//Value Computed by CMake
-Project_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-Project_SOURCE_DIR:STATIC=D:/Data/Document/Cpp/ToutDoux
-
-//Value Computed by CMake
 ToutDoux_BINARY_DIR:STATIC=D:/Data/Document/Cpp/ToutDoux/bin
 
 //Value Computed by CMake
@@ -264,6 +256,18 @@ ToutDoux_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 ToutDoux_SOURCE_DIR:STATIC=D:/Data/Document/Cpp/ToutDoux
+
+//Value Computed by CMake
+ToutDouxx_BINARY_DIR:STATIC=D:/Data/Document/Cpp/ToutDoux/bin
+
+//Value Computed by CMake
+ToutDouxx_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+ToutDouxx_SOURCE_DIR:STATIC=D:/Data/Document/Cpp/ToutDoux
+
+//Path to a library.
+nana:FILEPATH=D:/msys64/mingw64/lib/libnana.a
 
 
 ########################
