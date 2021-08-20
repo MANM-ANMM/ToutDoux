@@ -3,6 +3,6 @@
 
 int main()
 {
-	SetUp();
+	vueOrdi1::SetUp();
 	return 0;
 }

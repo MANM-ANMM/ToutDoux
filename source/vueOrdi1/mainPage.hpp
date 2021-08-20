@@ -1,3 +1,7 @@
 #pragma once
 
-void SetUp();
+namespace vueOrdi1
+{
+	void SetUp();
+
+}
