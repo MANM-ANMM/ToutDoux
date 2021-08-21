@@ -255,6 +255,22 @@ CMakeFiles/ToutDoux.dir/entrypoints/main/main.cpp.obj
  D:/msys64/mingw64/include/nana/gui/timer.hpp
  D:/msys64/mingw64/include/nana/gui/detail/general_events.hpp
  D:/msys64/mingw64/include/nana/gui/widgets/panel.hpp
+ D:/Data/Document/Cpp/ToutDoux/include/modele/ToutDoux.hpp
+ D:/msys64/mingw64/include/c++/10.3.0/filesystem
+ D:/msys64/mingw64/include/c++/10.3.0/bits/fs_fwd.h
+ D:/msys64/mingw64/include/c++/10.3.0/bits/fs_path.h
+ D:/msys64/mingw64/include/c++/10.3.0/locale
+ D:/msys64/mingw64/include/c++/10.3.0/bits/locale_facets_nonio.h
+ D:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/time_members.h
+ D:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/messages_members.h
+ D:/msys64/mingw64/include/c++/10.3.0/bits/codecvt.h
+ D:/msys64/mingw64/include/c++/10.3.0/bits/locale_facets_nonio.tcc
+ D:/msys64/mingw64/include/c++/10.3.0/bits/locale_conv.h
+ D:/msys64/mingw64/include/c++/10.3.0/iomanip
+ D:/msys64/mingw64/include/c++/10.3.0/bits/quoted_string.h
+ D:/msys64/mingw64/include/c++/10.3.0/codecvt
+ D:/msys64/mingw64/include/c++/10.3.0/bits/fs_dir.h
+ D:/msys64/mingw64/include/c++/10.3.0/bits/fs_ops.h
 
 CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.obj
  D:/Data/Document/Cpp/ToutDoux/source/modele/ToutDoux.cpp
@@ -720,7 +736,6 @@ CMakeFiles/ToutDoux.dir/source/vueOrdi1/mainPage.cpp.obj
  D:/msys64/mingw64/include/nana/gui/timer.hpp
  D:/msys64/mingw64/include/nana/gui/detail/general_events.hpp
  D:/msys64/mingw64/include/nana/gui/widgets/panel.hpp
- D:/msys64/mingw64/include/c++/10.3.0/iostream
  D:/Data/Document/Cpp/ToutDoux/include/modele/ToutDoux.hpp
  D:/msys64/mingw64/include/c++/10.3.0/filesystem
  D:/msys64/mingw64/include/c++/10.3.0/bits/fs_fwd.h
@@ -737,6 +752,7 @@ CMakeFiles/ToutDoux.dir/source/vueOrdi1/mainPage.cpp.obj
  D:/msys64/mingw64/include/c++/10.3.0/codecvt
  D:/msys64/mingw64/include/c++/10.3.0/bits/fs_dir.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/fs_ops.h
+ D:/msys64/mingw64/include/c++/10.3.0/iostream
 
 CMakeFiles/ToutDoux.dir/source/vueOrdi1/scrollPanel.cpp.obj
  D:/Data/Document/Cpp/ToutDoux/source/vueOrdi1/scrollPanel.cpp

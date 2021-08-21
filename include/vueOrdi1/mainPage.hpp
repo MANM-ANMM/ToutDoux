@@ -10,6 +10,7 @@
 #include <nana/gui/widgets/checkbox.hpp>
 
 #include "vueOrdi1/scrollPanel.hpp"
+#include "modele/ToutDoux.hpp"
 
 namespace vueOrdi1
 {
@@ -30,6 +31,10 @@ private:
 
 	std::vector<std::unique_ptr<nana::button>> projetsButton;
 	std::vector<std::unique_ptr<nana::checkbox>> elementsCheckbox;
+
+	std::vector<std::shared_ptr<ToutDoux::Projet>> _projets;
+
+	std::shared_ptr<ToutDoux::Projet> getProjet(const std::string_view& nomProjet);
 };
 
 

@@ -5,6 +5,7 @@
 #include <string_view>
 #include <string>
 
+
 namespace ToutDoux
 {
 
@@ -18,12 +19,13 @@ class Projet
 {
 public:
 	Projet (const std::string_view& nom);
+	~Projet ();
 
 	inline std::string nom() const
 	{
 		return _nom;
 	}
-
+	void sauvegarder() const;
 	std::vector<Element> elements() const;
 
 	void updateElement(const Element& element);
@@ -33,6 +35,7 @@ private:
 	void chargeElements() const;
 	const std::string _nom;
 	mutable std::vector<Element> _elements;
+	mutable bool _charge = false;
 };
 
 std::vector<Projet> GetAllProject();

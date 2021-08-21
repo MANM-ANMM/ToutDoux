@@ -5,7 +5,6 @@
 #include <iostream>
 
 
-#include "modele/ToutDoux.hpp"
 
 namespace vueOrdi1
 {
@@ -22,34 +21,48 @@ using namespace std::string_literals;
 
 	void MainPage::ShowProjet(const std::string_view& name)
 	{
-		ToutDoux::Projet p{name};
+		auto projet = getProjet(name);
+		if (projet == nullptr) return;
+
 
 		elementsCheckbox.clear();
-		//elementsPanel.div("<fit vert elements>");
+
 		int i = 0;
-		for (const auto& e : p.elements())
+		for (const auto& e : projet->elements())
 		{
 			elementsCheckbox.push_back(std::make_unique<checkbox>(elementsPanel.scrollPanel(), rectangle{0,20*i,1000,20}));
 			elementsCheckbox.back()->caption(e.objet);
 			elementsCheckbox.back()->check(e.fini);
+			elementsCheckbox.back()->events().click([&](){getProjet(name)->updateElement(ToutDoux::Element{elementsCheckbox.back()->checked(), e.objet});});
 			++i;
-
-			//elementsPanel.field("elements")<<*elementsCheckbox.back();
 		}
 
 		elementsPanel.collocate();
+	}
+
+
+	std::shared_ptr<ToutDoux::Projet> MainPage::getProjet(const std::string_view& nomProjet)
+	{
+		auto ret = std::ranges::find_if(_projets, [&](const std::shared_ptr<ToutDoux::Projet> p){return p->nom()==nomProjet;});
+		if (ret == std::end(_projets)) return nullptr;
+
+		return *ret;
 	}
 
 	void MainPage::UpdateProjectList()
 	{
 		projetsButton.clear();
 
-		std::vector<ToutDoux::Projet> projets = ToutDoux::GetAllProject();
-
-		for (const auto& p : projets)
+		const auto& projs = ToutDoux::GetAllProject();
+		for (const auto& p : projs)
 		{
-			projetsButton.push_back(std::make_unique<button>(projetsPanel.scrollPanel(), p.nom()));
-			projetsButton.back()->events().click([n=p.nom(), this](){
+			_projets.push_back(std::make_shared<ToutDoux::Projet>(p.nom()));
+		}
+
+		for (const auto& p : _projets)
+		{
+			projetsButton.push_back(std::make_unique<button>(projetsPanel.scrollPanel(), p->nom()));
+			projetsButton.back()->events().click([n=p->nom(), this](){
 				ShowProjet(n);
 				std::cout<<elementsCheckbox.size()<<'\n';
 			});

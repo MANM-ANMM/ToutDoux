@@ -16,9 +16,32 @@ Projet::Projet (const std::string_view& nom)
 	: _nom(nom)
 {}
 
+Projet::~Projet()
+{
+	if (_charge)
+	{
+		sauvegarder();
+	}
+}
+
+void Projet::sauvegarder() const
+{
+	const std::filesystem::path pathProjet{Projet::pathProjetsDirectory/nom()};
+
+	std::ofstream projetFile(pathProjet, std::ios::out | std::ios::trunc);
+
+	for (const auto& elem : _elements)
+	{
+		projetFile<<elem.fini<<" "<<elem.objet<<'\n';
+		std::cout<<elem.fini<<" "<<elem.objet<<'\n';
+	}
+	projetFile.close();
+
+}
+
 std::vector<Element> Projet::elements() const
 {
-	if (_elements.empty())
+	if (!_charge)
 	{
 		chargeElements();
 	}
@@ -30,7 +53,7 @@ void Projet::chargeElements() const
 {
 	using namespace std::filesystem;
 
-	const path pathProjet{Projet::pathProjetsDirectory/_nom};
+	const path pathProjet{Projet::pathProjetsDirectory/nom()};
 
 	_elements.clear();
 	if (exists(pathProjet) && is_regular_file(pathProjet))
@@ -49,10 +72,17 @@ void Projet::chargeElements() const
 			_elements.emplace_back(fini==1, objet);
 		}
 	}
+
+	_charge = true;
 }
 
 void Projet::updateElement(const Element& element)
 {
+	if (!_charge)
+	{
+		chargeElements();
+	}
+
 	auto itElem = std::ranges::find_if(_elements,[&](const Element& e){return element.objet == e.objet;});
 
 	if (itElem == _elements.end())
