@@ -129,29 +129,53 @@ ToutDoux/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/build
 .PHONY : ToutDoux/fast
 
-source/main.obj: source/main.cpp.obj
-.PHONY : source/main.obj
+entrypoints/main/main.obj: entrypoints/main/main.cpp.obj
+.PHONY : entrypoints/main/main.obj
 
 # target to build an object file
-source/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/source/main.cpp.obj
-.PHONY : source/main.cpp.obj
+entrypoints/main/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/entrypoints/main/main.cpp.obj
+.PHONY : entrypoints/main/main.cpp.obj
 
-source/main.i: source/main.cpp.i
-.PHONY : source/main.i
+entrypoints/main/main.i: entrypoints/main/main.cpp.i
+.PHONY : entrypoints/main/main.i
 
 # target to preprocess a source file
-source/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/source/main.cpp.i
-.PHONY : source/main.cpp.i
+entrypoints/main/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/entrypoints/main/main.cpp.i
+.PHONY : entrypoints/main/main.cpp.i
 
-source/main.s: source/main.cpp.s
-.PHONY : source/main.s
+entrypoints/main/main.s: entrypoints/main/main.cpp.s
+.PHONY : entrypoints/main/main.s
 
 # target to generate assembly for a file
-source/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/source/main.cpp.s
-.PHONY : source/main.cpp.s
+entrypoints/main/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/entrypoints/main/main.cpp.s
+.PHONY : entrypoints/main/main.cpp.s
+
+source/modele/ToutDoux.obj: source/modele/ToutDoux.cpp.obj
+.PHONY : source/modele/ToutDoux.obj
+
+# target to build an object file
+source/modele/ToutDoux.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.obj
+.PHONY : source/modele/ToutDoux.cpp.obj
+
+source/modele/ToutDoux.i: source/modele/ToutDoux.cpp.i
+.PHONY : source/modele/ToutDoux.i
+
+# target to preprocess a source file
+source/modele/ToutDoux.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.i
+.PHONY : source/modele/ToutDoux.cpp.i
+
+source/modele/ToutDoux.s: source/modele/ToutDoux.cpp.s
+.PHONY : source/modele/ToutDoux.s
+
+# target to generate assembly for a file
+source/modele/ToutDoux.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.s
+.PHONY : source/modele/ToutDoux.cpp.s
 
 source/vueOrdi1/mainPage.obj: source/vueOrdi1/mainPage.cpp.obj
 .PHONY : source/vueOrdi1/mainPage.obj
@@ -210,9 +234,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... ToutDoux
-	@echo ... source/main.obj
-	@echo ... source/main.i
-	@echo ... source/main.s
+	@echo ... entrypoints/main/main.obj
+	@echo ... entrypoints/main/main.i
+	@echo ... entrypoints/main/main.s
+	@echo ... source/modele/ToutDoux.obj
+	@echo ... source/modele/ToutDoux.i
+	@echo ... source/modele/ToutDoux.s
 	@echo ... source/vueOrdi1/mainPage.obj
 	@echo ... source/vueOrdi1/mainPage.i
 	@echo ... source/vueOrdi1/mainPage.s

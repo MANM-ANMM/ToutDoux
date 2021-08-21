@@ -68,20 +68,20 @@ include CMakeFiles/ToutDoux.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ToutDoux.dir/flags.make
 
-CMakeFiles/ToutDoux.dir/source/main.cpp.obj: CMakeFiles/ToutDoux.dir/flags.make
-CMakeFiles/ToutDoux.dir/source/main.cpp.obj: CMakeFiles/ToutDoux.dir/includes_CXX.rsp
-CMakeFiles/ToutDoux.dir/source/main.cpp.obj: ../source/main.cpp
-CMakeFiles/ToutDoux.dir/source/main.cpp.obj: CMakeFiles/ToutDoux.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Data\Document\Cpp\ToutDoux\bin\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ToutDoux.dir/source/main.cpp.obj"
-	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ToutDoux.dir/source/main.cpp.obj -MF CMakeFiles\ToutDoux.dir\source\main.cpp.obj.d -o CMakeFiles\ToutDoux.dir\source\main.cpp.obj -c D:\Data\Document\Cpp\ToutDoux\source\main.cpp
+CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.obj: CMakeFiles/ToutDoux.dir/flags.make
+CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.obj: CMakeFiles/ToutDoux.dir/includes_CXX.rsp
+CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.obj: ../source/modele/ToutDoux.cpp
+CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.obj: CMakeFiles/ToutDoux.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Data\Document\Cpp\ToutDoux\bin\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.obj"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.obj -MF CMakeFiles\ToutDoux.dir\source\modele\ToutDoux.cpp.obj.d -o CMakeFiles\ToutDoux.dir\source\modele\ToutDoux.cpp.obj -c D:\Data\Document\Cpp\ToutDoux\source\modele\ToutDoux.cpp
 
-CMakeFiles/ToutDoux.dir/source/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ToutDoux.dir/source/main.cpp.i"
-	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Data\Document\Cpp\ToutDoux\source\main.cpp > CMakeFiles\ToutDoux.dir\source\main.cpp.i
+CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.i"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Data\Document\Cpp\ToutDoux\source\modele\ToutDoux.cpp > CMakeFiles\ToutDoux.dir\source\modele\ToutDoux.cpp.i
 
-CMakeFiles/ToutDoux.dir/source/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ToutDoux.dir/source/main.cpp.s"
-	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Data\Document\Cpp\ToutDoux\source\main.cpp -o CMakeFiles\ToutDoux.dir\source\main.cpp.s
+CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.s"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Data\Document\Cpp\ToutDoux\source\modele\ToutDoux.cpp -o CMakeFiles\ToutDoux.dir\source\modele\ToutDoux.cpp.s
 
 CMakeFiles/ToutDoux.dir/source/vueOrdi1/mainPage.cpp.obj: CMakeFiles/ToutDoux.dir/flags.make
 CMakeFiles/ToutDoux.dir/source/vueOrdi1/mainPage.cpp.obj: CMakeFiles/ToutDoux.dir/includes_CXX.rsp
@@ -113,24 +113,41 @@ CMakeFiles/ToutDoux.dir/source/vueOrdi1/scrollPanel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ToutDoux.dir/source/vueOrdi1/scrollPanel.cpp.s"
 	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Data\Document\Cpp\ToutDoux\source\vueOrdi1\scrollPanel.cpp -o CMakeFiles\ToutDoux.dir\source\vueOrdi1\scrollPanel.cpp.s
 
+CMakeFiles/ToutDoux.dir/entrypoints/main/main.cpp.obj: CMakeFiles/ToutDoux.dir/flags.make
+CMakeFiles/ToutDoux.dir/entrypoints/main/main.cpp.obj: CMakeFiles/ToutDoux.dir/includes_CXX.rsp
+CMakeFiles/ToutDoux.dir/entrypoints/main/main.cpp.obj: ../entrypoints/main/main.cpp
+CMakeFiles/ToutDoux.dir/entrypoints/main/main.cpp.obj: CMakeFiles/ToutDoux.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Data\Document\Cpp\ToutDoux\bin\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ToutDoux.dir/entrypoints/main/main.cpp.obj"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ToutDoux.dir/entrypoints/main/main.cpp.obj -MF CMakeFiles\ToutDoux.dir\entrypoints\main\main.cpp.obj.d -o CMakeFiles\ToutDoux.dir\entrypoints\main\main.cpp.obj -c D:\Data\Document\Cpp\ToutDoux\entrypoints\main\main.cpp
+
+CMakeFiles/ToutDoux.dir/entrypoints/main/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ToutDoux.dir/entrypoints/main/main.cpp.i"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Data\Document\Cpp\ToutDoux\entrypoints\main\main.cpp > CMakeFiles\ToutDoux.dir\entrypoints\main\main.cpp.i
+
+CMakeFiles/ToutDoux.dir/entrypoints/main/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ToutDoux.dir/entrypoints/main/main.cpp.s"
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Data\Document\Cpp\ToutDoux\entrypoints\main\main.cpp -o CMakeFiles\ToutDoux.dir\entrypoints\main\main.cpp.s
+
 # Object files for target ToutDoux
 ToutDoux_OBJECTS = \
-"CMakeFiles/ToutDoux.dir/source/main.cpp.obj" \
+"CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.obj" \
 "CMakeFiles/ToutDoux.dir/source/vueOrdi1/mainPage.cpp.obj" \
-"CMakeFiles/ToutDoux.dir/source/vueOrdi1/scrollPanel.cpp.obj"
+"CMakeFiles/ToutDoux.dir/source/vueOrdi1/scrollPanel.cpp.obj" \
+"CMakeFiles/ToutDoux.dir/entrypoints/main/main.cpp.obj"
 
 # External object files for target ToutDoux
 ToutDoux_EXTERNAL_OBJECTS =
 
-ToutDoux.exe: CMakeFiles/ToutDoux.dir/source/main.cpp.obj
+ToutDoux.exe: CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.obj
 ToutDoux.exe: CMakeFiles/ToutDoux.dir/source/vueOrdi1/mainPage.cpp.obj
 ToutDoux.exe: CMakeFiles/ToutDoux.dir/source/vueOrdi1/scrollPanel.cpp.obj
+ToutDoux.exe: CMakeFiles/ToutDoux.dir/entrypoints/main/main.cpp.obj
 ToutDoux.exe: CMakeFiles/ToutDoux.dir/build.make
 ToutDoux.exe: ../lib/libnana.a
 ToutDoux.exe: CMakeFiles/ToutDoux.dir/linklibs.rsp
 ToutDoux.exe: CMakeFiles/ToutDoux.dir/objects1.rsp
 ToutDoux.exe: CMakeFiles/ToutDoux.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Data\Document\Cpp\ToutDoux\bin\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ToutDoux.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Data\Document\Cpp\ToutDoux\bin\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ToutDoux.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\ToutDoux.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

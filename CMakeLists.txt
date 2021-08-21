@@ -8,12 +8,14 @@ endif()
 
 project(${ProjetName} VERSION 1.0)
 
+file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp)
+
 if (${TEST})
-	file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/tests/*.cpp)
-	add_executable(${ProjetName} ${MY_SOURCES})
+	file(GLOB_RECURSE MY_TEST_SOURCES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/entrypoints/tests/*.cpp)
+	add_executable(${ProjetName} ${MY_SOURCES} ${MY_TEST_SOURCES})
 else()
-	file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp)
-	add_executable(${ProjetName} ${MY_SOURCES})
+	file(GLOB_RECURSE MY_MAIN_SOURCES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/entrypoints/main/*.cpp)
+	add_executable(${ProjetName} ${MY_SOURCES} ${MY_MAIN_SOURCES})
 endif()
 
 if(MSVC)

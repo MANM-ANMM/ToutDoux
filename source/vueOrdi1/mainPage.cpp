@@ -1,4 +1,4 @@
-#include "mainPage.hpp"
+#include "vueOrdi1/mainPage.hpp"
 
 
 #include <vector>
@@ -10,7 +10,7 @@
 #include <nana/gui/widgets/label.hpp>
 #include <nana/gui/widgets/checkbox.hpp>
 
-#include "scrollPanel.hpp"
+#include "vueOrdi1/scrollPanel.hpp"
 
 namespace vueOrdi1
 {
