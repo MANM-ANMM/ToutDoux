@@ -4,6 +4,8 @@
 #include <nana/gui/widgets/scroll.hpp>
 #include <nana/gui/widgets/panel.hpp>
 
+#include <tuple>
+
 namespace vueOrdi1
 {
 	class panel_scrolled : public nana::panel<false>
@@ -32,4 +34,18 @@ namespace vueOrdi1
 
 		unsigned int _scrollHeight;
 	};
+
+template<typename ElementType>
+std::vector<std::unique_ptr<ElementType>> populateScrollPanel(panel_scrolled& scrollPanel, const std::vector<std::string>& args)
+{
+	std::vector<std::unique_ptr<ElementType>> elements;
+	for (const auto& a : args)
+	{
+		elements.push_back(std::make_unique<ElementType>(scrollPanel.scrollPanel(), a));
+		scrollPanel.field("elements")<<*elements.back();
+	}
+	scrollPanel.collocate();
+
+	return elements;
+}
 }

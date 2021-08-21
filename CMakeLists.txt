@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.21)
 SET(ProjetName ToutDoux)
 SET(TestTargetName ToutDouxTest)
 
+
 project(${ProjetName} VERSION 1.0)
 
 file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp)
@@ -14,8 +15,8 @@ file(GLOB_RECURSE MY_MAIN_SOURCES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/
 add_executable(${ProjetName} ${MY_SOURCES} ${MY_MAIN_SOURCES})
 
 
-target_compile_options(${ProjetName} PRIVATE -Wall -Wextra -pedantic -Wconversion --diagnostics-color=always -lgdi32 -lcomdlg32 -DNANA_FILESYSTEM_FORCE)
-target_compile_options(${TestTargetName} PRIVATE -Wall -Wextra -pedantic -Wconversion --diagnostics-color=always -lgdi32 -lcomdlg32 -DNANA_FILESYSTEM_FORCE)
+target_compile_options(${ProjetName} PRIVATE -Wall -g -Og -Wextra -pedantic -Wconversion -fdiagnostics-color=always -DNANA_FILESYSTEM_FORCE)
+target_compile_options(${TestTargetName} PRIVATE -Wall -Wextra -pedantic -Wconversion -fdiagnostics-color=always -DNANA_FILESYSTEM_FORCE)
 
 
 target_include_directories(${ProjetName} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include D:/msys64/mingw64/include)

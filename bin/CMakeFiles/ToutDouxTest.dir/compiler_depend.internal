@@ -422,12 +422,31 @@ CMakeFiles/ToutDouxTest.dir/source/modele/ToutDoux.cpp.obj
 CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/mainPage.cpp.obj
  D:/Data/Document/Cpp/ToutDoux/source/vueOrdi1/mainPage.cpp
  D:/Data/Document/Cpp/ToutDoux/include/vueOrdi1/mainPage.hpp
- D:/msys64/mingw64/include/c++/10.3.0/vector
- D:/msys64/mingw64/include/c++/10.3.0/bits/stl_algobase.h
+ D:/msys64/mingw64/include/c++/10.3.0/string_view
+ D:/msys64/mingw64/include/c++/10.3.0/iosfwd
  D:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/c++config.h
  D:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/os_defines.h
  D:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/cpu_defines.h
  D:/msys64/mingw64/include/c++/10.3.0/pstl/pstl_config.h
+ D:/msys64/mingw64/include/c++/10.3.0/bits/stringfwd.h
+ D:/msys64/mingw64/include/c++/10.3.0/bits/memoryfwd.h
+ D:/msys64/mingw64/include/c++/10.3.0/bits/postypes.h
+ D:/msys64/mingw64/include/c++/10.3.0/cwchar
+ D:/msys64/mingw64/x86_64-w64-mingw32/include/wchar.h
+ D:/msys64/mingw64/x86_64-w64-mingw32/include/corecrt.h
+ D:/msys64/mingw64/x86_64-w64-mingw32/include/_mingw.h
+ D:/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h
+ D:/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h
+ D:/msys64/mingw64/x86_64-w64-mingw32/include/vadefs.h
+ D:/msys64/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h
+ D:/msys64/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h
+ D:/msys64/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h
+ D:/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h
+ D:/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h
+ D:/msys64/mingw64/x86_64-w64-mingw32/include/swprintf.inl
+ D:/msys64/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h
+ D:/msys64/mingw64/include/c++/10.3.0/bits/char_traits.h
+ D:/msys64/mingw64/include/c++/10.3.0/bits/stl_algobase.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/functexcept.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/exception_defines.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/cpp_type_traits.h
@@ -454,21 +473,24 @@ CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/mainPage.cpp.obj
  D:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/stddef.h
  D:/msys64/mingw64/x86_64-w64-mingw32/include/stddef.h
  D:/msys64/mingw64/x86_64-w64-mingw32/include/crtdefs.h
- D:/msys64/mingw64/x86_64-w64-mingw32/include/corecrt.h
- D:/msys64/mingw64/x86_64-w64-mingw32/include/_mingw.h
- D:/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h
- D:/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h
- D:/msys64/mingw64/x86_64-w64-mingw32/include/vadefs.h
- D:/msys64/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h
  D:/msys64/mingw64/include/c++/10.3.0/typeinfo
  D:/msys64/mingw64/include/c++/10.3.0/bits/hash_bytes.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/nested_exception.h
  D:/msys64/mingw64/include/c++/10.3.0/debug/debug.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/predefined_ops.h
+ D:/msys64/mingw64/include/c++/10.3.0/cstdint
+ D:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/stdint.h
+ D:/msys64/mingw64/x86_64-w64-mingw32/include/stdint.h
+ D:/msys64/mingw64/include/c++/10.3.0/bits/functional_hash.h
+ D:/msys64/mingw64/include/c++/10.3.0/bits/range_access.h
+ D:/msys64/mingw64/include/c++/10.3.0/initializer_list
+ D:/msys64/mingw64/include/c++/10.3.0/bits/ostream_insert.h
+ D:/msys64/mingw64/include/c++/10.3.0/bits/cxxabi_forced.h
+ D:/msys64/mingw64/include/c++/10.3.0/bits/string_view.tcc
+ D:/msys64/mingw64/include/c++/10.3.0/vector
  D:/msys64/mingw64/include/c++/10.3.0/bits/stl_algo.h
  D:/msys64/mingw64/include/c++/10.3.0/cstdlib
  D:/msys64/mingw64/x86_64-w64-mingw32/include/stdlib.h
- D:/msys64/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h
  D:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed/limits.h
  D:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include-fixed/syslimits.h
  D:/msys64/mingw64/x86_64-w64-mingw32/include/limits.h
@@ -479,7 +501,6 @@ CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/mainPage.cpp.obj
  D:/msys64/mingw64/x86_64-w64-mingw32/include/errno.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/std_abs.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/algorithmfwd.h
- D:/msys64/mingw64/include/c++/10.3.0/initializer_list
  D:/msys64/mingw64/include/c++/10.3.0/bits/stl_heap.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/stl_tempbuf.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/stl_construct.h
@@ -488,30 +509,17 @@ CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/mainPage.cpp.obj
  D:/msys64/mingw64/include/c++/10.3.0/bits/allocator.h
  D:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/c++allocator.h
  D:/msys64/mingw64/include/c++/10.3.0/ext/new_allocator.h
- D:/msys64/mingw64/include/c++/10.3.0/bits/memoryfwd.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/stl_uninitialized.h
  D:/msys64/mingw64/include/c++/10.3.0/ext/alloc_traits.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/alloc_traits.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/stl_vector.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/stl_bvector.h
- D:/msys64/mingw64/include/c++/10.3.0/bits/functional_hash.h
- D:/msys64/mingw64/include/c++/10.3.0/bits/range_access.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/vector.tcc
  D:/msys64/mingw64/include/c++/10.3.0/memory
  D:/msys64/mingw64/include/c++/10.3.0/bits/stl_raw_storage_iter.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/ranges_uninitialized.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/ranges_algobase.h
  D:/msys64/mingw64/include/c++/10.3.0/iterator
- D:/msys64/mingw64/include/c++/10.3.0/iosfwd
- D:/msys64/mingw64/include/c++/10.3.0/bits/stringfwd.h
- D:/msys64/mingw64/include/c++/10.3.0/bits/postypes.h
- D:/msys64/mingw64/include/c++/10.3.0/cwchar
- D:/msys64/mingw64/x86_64-w64-mingw32/include/wchar.h
- D:/msys64/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h
- D:/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h
- D:/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h
- D:/msys64/mingw64/x86_64-w64-mingw32/include/swprintf.inl
- D:/msys64/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/stream_iterator.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/streambuf_iterator.h
  D:/msys64/mingw64/include/c++/10.3.0/streambuf
@@ -543,17 +551,9 @@ CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/mainPage.cpp.obj
  D:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/atomic_word.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/locale_classes.h
  D:/msys64/mingw64/include/c++/10.3.0/string
- D:/msys64/mingw64/include/c++/10.3.0/bits/char_traits.h
- D:/msys64/mingw64/include/c++/10.3.0/cstdint
- D:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/stdint.h
- D:/msys64/mingw64/x86_64-w64-mingw32/include/stdint.h
- D:/msys64/mingw64/include/c++/10.3.0/bits/ostream_insert.h
- D:/msys64/mingw64/include/c++/10.3.0/bits/cxxabi_forced.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/stl_function.h
  D:/msys64/mingw64/include/c++/10.3.0/backward/binders.h
  D:/msys64/mingw64/include/c++/10.3.0/bits/basic_string.h
- D:/msys64/mingw64/include/c++/10.3.0/string_view
- D:/msys64/mingw64/include/c++/10.3.0/bits/string_view.tcc
  D:/msys64/mingw64/include/c++/10.3.0/ext/string_conversions.h
  D:/msys64/mingw64/include/c++/10.3.0/cstdio
  D:/msys64/mingw64/include/c++/10.3.0/cerrno
@@ -598,9 +598,6 @@ CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/mainPage.cpp.obj
  D:/msys64/mingw64/include/c++/10.3.0/bit
  D:/msys64/mingw64/include/c++/10.3.0/pstl/glue_memory_defs.h
  D:/msys64/mingw64/include/c++/10.3.0/pstl/execution_defs.h
- D:/msys64/mingw64/include/c++/10.3.0/iostream
- D:/msys64/mingw64/include/c++/10.3.0/istream
- D:/msys64/mingw64/include/c++/10.3.0/bits/istream.tcc
  D:/msys64/mingw64/include/nana/gui.hpp
  D:/msys64/mingw64/include/nana/gui/compact.hpp
  D:/msys64/mingw64/include/nana/gui/programming_interface.hpp
@@ -655,6 +652,8 @@ CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/mainPage.cpp.obj
  D:/msys64/mingw64/include/nana/gui/programming_interface.hpp
  D:/msys64/mingw64/include/nana/internationalization.hpp
  D:/msys64/mingw64/include/c++/10.3.0/sstream
+ D:/msys64/mingw64/include/c++/10.3.0/istream
+ D:/msys64/mingw64/include/c++/10.3.0/bits/istream.tcc
  D:/msys64/mingw64/include/c++/10.3.0/bits/sstream.tcc
  D:/msys64/mingw64/include/nana/gui/detail/drawer.hpp
  D:/msys64/mingw64/include/nana/gui/detail/general_events.hpp
@@ -663,6 +662,9 @@ CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/mainPage.cpp.obj
  D:/msys64/mingw64/include/nana/gui/widgets/widget.hpp
  D:/msys64/mingw64/include/nana/gui/msgbox.hpp
  D:/msys64/mingw64/include/nana/gui/place.hpp
+ D:/msys64/mingw64/include/nana/gui/widgets/button.hpp
+ D:/msys64/mingw64/include/nana/gui/element.hpp
+ D:/msys64/mingw64/include/nana/pat/cloneable.hpp
  D:/msys64/mingw64/include/nana/gui/widgets/label.hpp
  D:/msys64/mingw64/include/nana/gui/widgets/checkbox.hpp
  D:/Data/Document/Cpp/ToutDoux/include/vueOrdi1/scrollPanel.hpp
@@ -670,6 +672,7 @@ CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/mainPage.cpp.obj
  D:/msys64/mingw64/include/nana/gui/timer.hpp
  D:/msys64/mingw64/include/nana/gui/detail/general_events.hpp
  D:/msys64/mingw64/include/nana/gui/widgets/panel.hpp
+ D:/msys64/mingw64/include/c++/10.3.0/iostream
  D:/Data/Document/Cpp/ToutDoux/include/modele/ToutDoux.hpp
  D:/msys64/mingw64/include/c++/10.3.0/filesystem
  D:/msys64/mingw64/include/c++/10.3.0/bits/fs_fwd.h

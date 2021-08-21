@@ -3,6 +3,7 @@
 
 int main()
 {
-	vueOrdi1::SetUp();
+	vueOrdi1::MainPage mainPage;
+	mainPage.SetUp();
 	return 0;
 }

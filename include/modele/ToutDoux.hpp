@@ -2,6 +2,8 @@
 
 #include <vector>
 #include <filesystem>
+#include <string_view>
+#include <string>
 
 namespace ToutDoux
 {
@@ -25,10 +27,10 @@ public:
 	std::vector<Element> elements() const;
 
 	void updateElement(const Element& element);
-	void chargeElements() const;
 
 	inline static const std::filesystem::path pathProjetsDirectory{"./projets/"};
 private:
+	void chargeElements() const;
 	const std::string _nom;
 	mutable std::vector<Element> _elements;
 };
