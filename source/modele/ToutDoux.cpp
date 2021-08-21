@@ -5,10 +5,14 @@
 #include <string_view>
 #include <fstream>
 
+#include <iostream>
+
+#include "utilities/stringOperation.hpp"
+
 namespace ToutDoux
 {
 
-Projet::Projet (const std::string_view nom)
+Projet::Projet (const std::string_view& nom)
 	: _nom(nom)
 {}
 
@@ -39,6 +43,8 @@ void Projet::chargeElements() const
 			short fini;
 			projetFile >> fini;
 			getline(projetFile, objet);
+			objet = util::trim(objet);
+			if (objet.empty()) break;
 
 			_elements.emplace_back(fini==1, objet);
 		}

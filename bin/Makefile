@@ -129,6 +129,19 @@ ToutDoux/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/build
 .PHONY : ToutDoux/fast
 
+#=============================================================================
+# Target rules for targets named ToutDouxTest
+
+# Build rule for target.
+ToutDouxTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ToutDouxTest
+.PHONY : ToutDouxTest
+
+# fast build rule for target.
+ToutDouxTest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/build
+.PHONY : ToutDouxTest/fast
+
 entrypoints/main/main.obj: entrypoints/main/main.cpp.obj
 .PHONY : entrypoints/main/main.obj
 
@@ -153,12 +166,37 @@ entrypoints/main/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/entrypoints/main/main.cpp.s
 .PHONY : entrypoints/main/main.cpp.s
 
+entrypoints/tests/testProjet.obj: entrypoints/tests/testProjet.cpp.obj
+.PHONY : entrypoints/tests/testProjet.obj
+
+# target to build an object file
+entrypoints/tests/testProjet.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/entrypoints/tests/testProjet.cpp.obj
+.PHONY : entrypoints/tests/testProjet.cpp.obj
+
+entrypoints/tests/testProjet.i: entrypoints/tests/testProjet.cpp.i
+.PHONY : entrypoints/tests/testProjet.i
+
+# target to preprocess a source file
+entrypoints/tests/testProjet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/entrypoints/tests/testProjet.cpp.i
+.PHONY : entrypoints/tests/testProjet.cpp.i
+
+entrypoints/tests/testProjet.s: entrypoints/tests/testProjet.cpp.s
+.PHONY : entrypoints/tests/testProjet.s
+
+# target to generate assembly for a file
+entrypoints/tests/testProjet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/entrypoints/tests/testProjet.cpp.s
+.PHONY : entrypoints/tests/testProjet.cpp.s
+
 source/modele/ToutDoux.obj: source/modele/ToutDoux.cpp.obj
 .PHONY : source/modele/ToutDoux.obj
 
 # target to build an object file
 source/modele/ToutDoux.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/source/modele/ToutDoux.cpp.obj
 .PHONY : source/modele/ToutDoux.cpp.obj
 
 source/modele/ToutDoux.i: source/modele/ToutDoux.cpp.i
@@ -167,6 +205,7 @@ source/modele/ToutDoux.i: source/modele/ToutDoux.cpp.i
 # target to preprocess a source file
 source/modele/ToutDoux.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/source/modele/ToutDoux.cpp.i
 .PHONY : source/modele/ToutDoux.cpp.i
 
 source/modele/ToutDoux.s: source/modele/ToutDoux.cpp.s
@@ -175,6 +214,7 @@ source/modele/ToutDoux.s: source/modele/ToutDoux.cpp.s
 # target to generate assembly for a file
 source/modele/ToutDoux.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/source/modele/ToutDoux.cpp.s
 .PHONY : source/modele/ToutDoux.cpp.s
 
 source/vueOrdi1/mainPage.obj: source/vueOrdi1/mainPage.cpp.obj
@@ -183,6 +223,7 @@ source/vueOrdi1/mainPage.obj: source/vueOrdi1/mainPage.cpp.obj
 # target to build an object file
 source/vueOrdi1/mainPage.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/source/vueOrdi1/mainPage.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/mainPage.cpp.obj
 .PHONY : source/vueOrdi1/mainPage.cpp.obj
 
 source/vueOrdi1/mainPage.i: source/vueOrdi1/mainPage.cpp.i
@@ -191,6 +232,7 @@ source/vueOrdi1/mainPage.i: source/vueOrdi1/mainPage.cpp.i
 # target to preprocess a source file
 source/vueOrdi1/mainPage.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/source/vueOrdi1/mainPage.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/mainPage.cpp.i
 .PHONY : source/vueOrdi1/mainPage.cpp.i
 
 source/vueOrdi1/mainPage.s: source/vueOrdi1/mainPage.cpp.s
@@ -199,6 +241,7 @@ source/vueOrdi1/mainPage.s: source/vueOrdi1/mainPage.cpp.s
 # target to generate assembly for a file
 source/vueOrdi1/mainPage.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/source/vueOrdi1/mainPage.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/mainPage.cpp.s
 .PHONY : source/vueOrdi1/mainPage.cpp.s
 
 source/vueOrdi1/scrollPanel.obj: source/vueOrdi1/scrollPanel.cpp.obj
@@ -207,6 +250,7 @@ source/vueOrdi1/scrollPanel.obj: source/vueOrdi1/scrollPanel.cpp.obj
 # target to build an object file
 source/vueOrdi1/scrollPanel.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/source/vueOrdi1/scrollPanel.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/scrollPanel.cpp.obj
 .PHONY : source/vueOrdi1/scrollPanel.cpp.obj
 
 source/vueOrdi1/scrollPanel.i: source/vueOrdi1/scrollPanel.cpp.i
@@ -215,6 +259,7 @@ source/vueOrdi1/scrollPanel.i: source/vueOrdi1/scrollPanel.cpp.i
 # target to preprocess a source file
 source/vueOrdi1/scrollPanel.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/source/vueOrdi1/scrollPanel.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/scrollPanel.cpp.i
 .PHONY : source/vueOrdi1/scrollPanel.cpp.i
 
 source/vueOrdi1/scrollPanel.s: source/vueOrdi1/scrollPanel.cpp.s
@@ -223,6 +268,7 @@ source/vueOrdi1/scrollPanel.s: source/vueOrdi1/scrollPanel.cpp.s
 # target to generate assembly for a file
 source/vueOrdi1/scrollPanel.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/source/vueOrdi1/scrollPanel.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/scrollPanel.cpp.s
 .PHONY : source/vueOrdi1/scrollPanel.cpp.s
 
 # Help Target
@@ -234,9 +280,13 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... ToutDoux
+	@echo ... ToutDouxTest
 	@echo ... entrypoints/main/main.obj
 	@echo ... entrypoints/main/main.i
 	@echo ... entrypoints/main/main.s
+	@echo ... entrypoints/tests/testProjet.obj
+	@echo ... entrypoints/tests/testProjet.i
+	@echo ... entrypoints/tests/testProjet.s
 	@echo ... source/modele/ToutDoux.obj
 	@echo ... source/modele/ToutDoux.i
 	@echo ... source/modele/ToutDoux.s

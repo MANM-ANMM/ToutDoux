@@ -15,7 +15,7 @@ struct Element
 class Projet
 {
 public:
-	Projet (const std::string_view nom);
+	Projet (const std::string_view& nom);
 
 	inline std::string nom() const
 	{

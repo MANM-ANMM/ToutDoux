@@ -11,6 +11,7 @@
 #include <nana/gui/widgets/checkbox.hpp>
 
 #include "vueOrdi1/scrollPanel.hpp"
+#include "modele/ToutDoux.hpp"
 
 namespace vueOrdi1
 {
@@ -39,14 +40,18 @@ namespace vueOrdi1
 		projetsPanel.div("<vert fit projets>");
 		elementsPanel.div("<vert fit elements>");
 
-		std::vector<std::unique_ptr<label>> projects;
 
-		for (int i=0; i<10;++i)
+		std::vector<std::unique_ptr<label>> projetsLabels;
 		{
-			projects.push_back(std::make_unique<label>(projetsPanel.scrollPanel(),"ProjetPviezoqhk "s+std::to_string(i)));
-			projetsPanel.field("projets")<<*projects.back();
+			std::vector<ToutDoux::Projet> projets = ToutDoux::GetAllProject();
+			for (const auto& p : projets)
+			{
+				projetsLabels.push_back(std::make_unique<label>(projetsPanel.scrollPanel(), p.nom()));
+				projetsPanel.field("projets")<<*projetsLabels.back();
+			}
+			projetsPanel.collocate();
 		}
-		projetsPanel.collocate();
+
 
 
 		std::vector<std::unique_ptr<checkbox>> elements;

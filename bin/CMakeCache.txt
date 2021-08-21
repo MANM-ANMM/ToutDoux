@@ -248,6 +248,18 @@ CMAKE_STRIP:FILEPATH=D:/msys64/mingw64/bin/strip.exe
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//No help, variable specified on the command line.
+TEST:UNINITIALIZED=true
+
+//Value Computed by CMake
+ToutDouxTest_BINARY_DIR:STATIC=D:/Data/Document/Cpp/ToutDoux/bin
+
+//Value Computed by CMake
+ToutDouxTest_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+ToutDouxTest_SOURCE_DIR:STATIC=D:/Data/Document/Cpp/ToutDoux
+
 //Value Computed by CMake
 ToutDoux_BINARY_DIR:STATIC=D:/Data/Document/Cpp/ToutDoux/bin
 
