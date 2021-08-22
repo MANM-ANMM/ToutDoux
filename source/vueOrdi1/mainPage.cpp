@@ -7,7 +7,7 @@
 
 
 namespace vueOrdi1
-{
+{/*
 using namespace nana;
 using namespace std::string_literals;
 	MainPage::MainPage()
@@ -90,5 +90,5 @@ using namespace std::string_literals;
 		fenetre.show();
 		exec();
 	}
-
+*/
 }
