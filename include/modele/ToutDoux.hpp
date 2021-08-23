@@ -15,8 +15,6 @@ enum class StatusElement : bool {
 };
 
 
-
-
 struct Element
 {
 	StatusElement status;
@@ -27,10 +25,6 @@ class Projet
 {
 public:
 	Projet(const std::filesystem::path& pathProjet);
-	/*Projet(const Projet& projet);
-	Projet& operator=(const ToutDoux::Projet& projet);
-	Projet(Projet&& projet);
-	Projet& operator=(Projet&& projet);*/
 
 	std::string getNom() const;
 	void markElementAs(const std::string_view& objetElement, const StatusElement& nouveauStatus);
@@ -38,6 +32,8 @@ public:
 	void deleteElement(const std::string_view& objetElement);
 
 	const std::vector<Element> getElements();
+
+	void save() const;
 private:
 	std::vector<Element>::iterator getElement(const std::string_view& objetElement);
 	void charger();
@@ -50,7 +46,8 @@ private:
 class Manager
 {
 public:
-	Manager(const std::string_view& pathToProjectDirectory);
+	Manager(const std::string_view& pathToProjectDirectory, const bool autoSaveActivated = false);
+	~Manager();
 
 	std::vector<std::string> getProjectsNames() const;
 	const std::vector<Element> getProjectElements(const std::string_view& nomProjet);
@@ -62,6 +59,9 @@ public:
 
 	void deleteProject(const std::string_view& nomProjetASupprimer);
 	void deleteElement(const std::string_view& nomProjet, const std::string_view& objetElement);
+
+	void save() const;
+	void saveProject(const std::string_view& nomProjet) const;
 private:
 	std::vector<Projet>::iterator getProject(const std::string_view& nomProjet);
 	std::vector<Projet>::const_iterator getProject(const std::string_view& nomProjet) const;
@@ -70,6 +70,9 @@ private:
 	std::filesystem::path _pathToProjectDirectory;
 
 	std::vector<Projet> _projets;
+	mutable std::vector<std::string> _nomsProjetsSupprimer;
+
+	bool _autoSaveActivated;
 };
 
 

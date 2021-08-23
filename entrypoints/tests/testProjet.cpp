@@ -24,7 +24,7 @@ void printElements(const std::vector<td::Element>& elements)
 
 void FonctionementModele()
 {
-	td::Manager manager{"./projets/"s};
+	td::Manager manager{"./projets/"s, true};
 
 	std::vector<std::string> nomsProjets{manager.getProjectsNames()};
 
@@ -38,13 +38,16 @@ void FonctionementModele()
 	for (const td::Element& elem : elementsProjet)
 	{
 		printElement(elem);
-		manager.markElementAs(nomsProjets[0], elem.objet, td::StatusElement::Fini);
+		manager.markElementAs(nomsProjets[0], elem.objet, td::StatusElement::ToDo);
 	}
 
 	elementsProjet = manager.getProjectElements(nomsProjets[0]);
 	printElements(elementsProjet);
 
-	manager.addElement(nomsProjets[0], "Politik kills");
+	if (std::ranges::none_of(elementsProjet, [](const ToutDoux::Element& elem){return elem.objet == "Politik kills"s;}))
+	{
+		manager.addElement(nomsProjets[0], "Politik kills");
+	}
 
 	elementsProjet = manager.getProjectElements(nomsProjets[0]);
 	printElements(elementsProjet);
@@ -52,6 +55,9 @@ void FonctionementModele()
 	manager.deleteElement(nomsProjets[0], "Politik kills");
 	elementsProjet = manager.getProjectElements(nomsProjets[0]);
 	printElements(elementsProjet);
+
+
+	manager.addElement(nomsProjets[0], "Politik kills");
 }
 }
 

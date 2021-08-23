@@ -14,8 +14,9 @@ namespace ToutDoux
 {
 using namespace std::string_literals;
 
-Manager::Manager(const std::string_view& pathToProjectDirectory)
-	:_pathToProjectDirectory(pathToProjectDirectory)
+Manager::Manager(const std::string_view& pathToProjectDirectory, const bool autoSaveActivated)
+	:_pathToProjectDirectory(pathToProjectDirectory),
+	_autoSaveActivated(autoSaveActivated)
 {
 	//check if project's directory exists and create it if it doesn't
 	using namespace std::filesystem;
@@ -31,6 +32,14 @@ Manager::Manager(const std::string_view& pathToProjectDirectory)
 		{
 			_projets.emplace_back(dir_entry.path());
 		}
+	}
+}
+
+Manager::~Manager()
+{
+	if (_autoSaveActivated)
+	{
+		save();
 	}
 }
 
@@ -65,7 +74,7 @@ void Manager::addProject(const std::string_view& nomNouveauProjet)
 	{
 		throw std::domain_error("Le nom du nouveau projet est deja pris"s);
 	}
-	_projets.emplace_back(nomNouveauProjet);
+	_projets.emplace_back(_pathToProjectDirectory/nomNouveauProjet);
 }
 
 void Manager::deleteProject(const std::string_view& nomProjetASupprimer)
@@ -73,7 +82,8 @@ void Manager::deleteProject(const std::string_view& nomProjetASupprimer)
 	std::erase_if(_projets, [&nomProjetASupprimer](const Projet& projet){
 		return projet.getNom() == nomProjetASupprimer;
 	});
-	//_projets.erase(getProject(nomProjetASupprimer));
+
+	_nomsProjetsSupprimer.emplace_back(nomProjetASupprimer);
 }
 
 void Manager::deleteElement(const std::string_view& nomProjet, const std::string_view& objetElement)
@@ -81,6 +91,21 @@ void Manager::deleteElement(const std::string_view& nomProjet, const std::string
 	getProject(nomProjet)->deleteElement(objetElement);
 }
 
+void Manager::save() const
+{
+	std::ranges::for_each(_projets, [](const Projet& projet){projet.save();});
+
+	std::ranges::for_each(_nomsProjetsSupprimer, [this](const std::string& nomProjetASupprimer){
+		std::cout<<std::filesystem::remove(std::filesystem::path(_pathToProjectDirectory/nomProjetASupprimer));
+	});
+
+	_nomsProjetsSupprimer.clear();
+}
+
+void Manager::saveProject(const std::string_view& nomProjet) const
+{
+	getProject(nomProjet)->save();
+}
 
 std::vector<Projet>::const_iterator Manager::getProject(const std::string_view& nomProjet) const
 {
@@ -219,22 +244,16 @@ void Projet::charger()
 
 }
 
-////////////////////////////////////////////////////////////////////////////////////////
-
-/*
-void Projet::sauvegarder() const
+void Projet::save() const
 {
-	const std::filesystem::path pathProjet{Projet::pathProjetsDirectory/nom()};
+	if (!_elements) return;
 
-	std::ofstream projetFile(pathProjet, std::ios::out | std::ios::trunc);
+	std::ofstream projetFile(_pathProjet, std::ios::out | std::ios::trunc);
 
-	for (const auto& elem : _elements)
+	for (const auto& elem : *_elements)
 	{
-		projetFile<<elem.fini<<" "<<elem.objet<<'\n';
-		std::cout<<elem.fini<<" "<<elem.objet<<'\n';
+		projetFile<<(elem.status == StatusElement::Fini)<<" "<<elem.objet<<'\n';
 	}
 	projetFile.close();
-
-}*/
-
+}
 }
