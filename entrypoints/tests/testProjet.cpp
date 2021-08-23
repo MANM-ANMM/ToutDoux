@@ -9,6 +9,18 @@ namespace Test
 namespace td = ToutDoux;
 using namespace std::string_literals;
 
+void printElement(const td::Element& element)
+{
+	std::cout<<(element.status == td::StatusElement::Fini)<<" "<<element.objet<<'\n';
+}
+
+void printElements(const std::vector<td::Element>& elements)
+{
+	for (const td::Element& elem : elements)
+	{
+		printElement(elem);
+	}
+}
 
 void FonctionementModele()
 {
@@ -23,18 +35,23 @@ void FonctionementModele()
 
 
 	std::vector<td::Element> elementsProjet {manager.getProjectElements(nomsProjets[0])};
-
 	for (const td::Element& elem : elementsProjet)
 	{
-		std::cout<<(elem.status == td::StatusElement::Fini)<<" "<<elem.objet<<'\n';
+		printElement(elem);
 		manager.markElementAs(nomsProjets[0], elem.objet, td::StatusElement::Fini);
 	}
 
 	elementsProjet = manager.getProjectElements(nomsProjets[0]);
-	for (const td::Element& elem : elementsProjet)
-	{
-		std::cout<<(elem.status == td::StatusElement::Fini)<<" "<<elem.objet<<'\n';
-	}
+	printElements(elementsProjet);
+
+	manager.addElement(nomsProjets[0], "Politik kills");
+
+	elementsProjet = manager.getProjectElements(nomsProjets[0]);
+	printElements(elementsProjet);
+
+	manager.deleteElement(nomsProjets[0], "Politik kills");
+	elementsProjet = manager.getProjectElements(nomsProjets[0]);
+	printElements(elementsProjet);
 }
 }
 
@@ -93,6 +110,49 @@ boost::ut::suite tests = []
 			}
 		}
 	};
+
+	"addAndDeleteElement"_test = []{
+		ToutDoux::Manager manager{"./projets/"s};
+		std::vector<std::string> nomsProjets{manager.getProjectsNames()};
+		for (const std::string& nomP : nomsProjets)
+		{
+			std::vector<ToutDoux::Element> elementsProjet {manager.getProjectElements(nomP)};
+			std::size_t tailleAvant = elementsProjet.size();
+			const std::string objetElem {"|||li$$$$$$$$$$$////|||"s};
+
+			//add
+			manager.addElement(nomP, objetElem);
+			elementsProjet = manager.getProjectElements(nomP);
+			expect(tailleAvant+1 == elementsProjet.size());
+			expect(std::ranges::any_of(elementsProjet, [&objetElem](const ToutDoux::Element& elem){return elem.objet == objetElem;}));
+
+			//delete
+			expect(nothrow([&nomP,&objetElem, &manager]{manager.deleteElement(nomP, objetElem);}));
+			elementsProjet = manager.getProjectElements(nomP);
+			expect(tailleAvant == elementsProjet.size());
+			expect(std::ranges::none_of(elementsProjet, [&objetElem](const ToutDoux::Element& elem){return elem.objet == objetElem;}));
+		}
+	};
+
+	"addAndDeleteProject"_test = []{
+		ToutDoux::Manager manager {"./projets/"s};
+		std::vector<std::string> nomsProjets{manager.getProjectsNames()};
+		std::size_t tailleAvant = nomsProjets.size();
+		const std::string nomProjet{"#######||||$$$$$##"};
+
+		manager.addProject(nomProjet);
+
+		nomsProjets = manager.getProjectsNames();
+		expect(tailleAvant+1 == nomsProjets.size());
+		expect(nothrow([&nomProjet, &manager]{manager.getProjectElements(nomProjet);}));
+
+
+		//delete
+		expect(nothrow([&manager, &nomProjet]{manager.deleteProject(nomProjet);}));
+		nomsProjets = manager.getProjectsNames();
+		expect(tailleAvant == nomsProjets.size());
+		expect(std::ranges::none_of(nomsProjets, [&nomProjet](const std::string& nomP){return nomP == nomProjet;}));
+	};
 };
 
 
@@ -100,7 +160,7 @@ int main(int, char**)
 {
 	using namespace boost::ut;
 
-	//Test::FonctionementModele();
+	Test::FonctionementModele();
 
 
 	return 0;
