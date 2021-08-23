@@ -252,8 +252,20 @@ void Projet::save() const
 
 	for (const auto& elem : *_elements)
 	{
-		projetFile<<(elem.status == StatusElement::Fini)<<" "<<elem.objet<<'\n';
+		projetFile<<statusElementToBool(elem.status)<<" "<<elem.objet<<'\n';
 	}
 	projetFile.close();
 }
+
+
+bool statusElementToBool(const StatusElement& status)
+{
+	return status == StatusElement::Fini;
+}
+
+StatusElement statusElementFromBool(const bool status)
+{
+	return status ? StatusElement::Fini : StatusElement::ToDo;
+}
+
 }

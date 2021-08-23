@@ -11,7 +11,7 @@ using namespace std::string_literals;
 
 void printElement(const td::Element& element)
 {
-	std::cout<<(element.status == td::StatusElement::Fini)<<" "<<element.objet<<'\n';
+	std::cout<<td::statusElementToBool(element.status)<<" "<<element.objet<<'\n';
 }
 
 void printElements(const std::vector<td::Element>& elements)
@@ -91,7 +91,7 @@ boost::ut::suite tests = []
 
 			for (const auto& e : elementsProjet)
 			{
-				expect(e.status == ToutDoux::StatusElement::Fini);
+				expect(statusElementToBool(e.status));
 			}
 		}
 	};

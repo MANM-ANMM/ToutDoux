@@ -14,12 +14,17 @@ enum class StatusElement : bool {
 	ToDo = false
 };
 
+bool statusElementToBool(const StatusElement& status);
+StatusElement statusElementFromBool(const bool status);
+
 
 struct Element
 {
 	StatusElement status;
 	std::string objet;
 };
+
+
 
 class Projet
 {
