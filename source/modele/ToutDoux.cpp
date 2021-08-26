@@ -43,6 +43,48 @@ Manager::~Manager()
 	}
 }
 
+void Manager::annuler()
+{
+	if (pileAnnulation.empty()) return;
+	auto rollback = pileAnnulation.top().roleback;
+	std::cerr<<pileAnnulation.top().expliquation<<'\n';
+	pileAnnulation.pop();
+	rollback();
+}
+
+void Manager::annulerAnnulation()
+{
+	if (pileAnnulationAnnulation.empty()) return;
+	auto rollback = pileAnnulationAnnulation.top().roleback;
+	pileAnnulationAnnulation.pop();
+	rollback();
+}
+
+bool Manager::verifyNomNouveauProjet(const std::string_view& nom) const
+{
+	if (nom.empty()) return false;
+	if (nom.starts_with(' ') || nom.starts_with('.')) return false;
+	if (std::ranges::any_of(nom, [](const char c){return c=='\\' || c == '/';})) return false;
+
+	const std::vector<std::string> nomsProjets = getProjectsNames();
+	if (std::ranges::any_of(nomsProjets, [&nom](const std::string_view& n){return n == nom;})) return false;
+
+	return true;
+}
+
+bool Manager::verifyObjetNouvelElement(const std::string_view& nomProjet, const std::string_view& objetNouvelElement)
+{
+	if (objetNouvelElement.empty()) return false;
+	if (objetNouvelElement.starts_with(' ') || objetNouvelElement.starts_with('.')) return false;
+	if (std::ranges::any_of(objetNouvelElement, [](const char c){return c=='\\' || c == '/';})) return false;
+
+	const std::vector<Element> objetsElements = getProjectElements(nomProjet);
+
+	if (std::ranges::any_of(objetsElements, [&objetNouvelElement](const Element& e){return e.objet == objetNouvelElement;})) return false;
+
+	return true;
+}
+
 std::vector<std::string> Manager::getProjectsNames() const
 {
 	std::vector<std::string> nomsProjets(_projets.size());
@@ -57,38 +99,28 @@ const std::vector<Element> Manager::getProjectElements(const std::string_view& n
 
 void Manager::markElementAs(const std::string_view& nomProjet, const std::string_view& objetElement, const StatusElement& nouveauStatus)
 {
-	getProject(nomProjet)->markElementAs(objetElement, nouveauStatus);
+	_markElementAs<true>(nomProjet, objetElement, nouveauStatus);
 }
 
 void Manager::addElement(const std::string_view& nomProjet, const std::string_view& objetNouvelElement)
 {
-	getProject(nomProjet)->addElement(objetNouvelElement);
+	_addElement<true>(nomProjet, objetNouvelElement);
 }
 
 
 void Manager::addProject(const std::string_view& nomNouveauProjet)
 {
-	if (std::ranges::any_of(_projets, [&nomNouveauProjet](const Projet& projet){
-		return projet.getNom() == nomNouveauProjet;}
-	))
-	{
-		throw std::domain_error("Le nom du nouveau projet est deja pris"s);
-	}
-	_projets.emplace_back(_pathToProjectDirectory/nomNouveauProjet);
+	_addProject<true>(nomNouveauProjet);
 }
 
 void Manager::deleteProject(const std::string_view& nomProjetASupprimer)
 {
-	std::erase_if(_projets, [&nomProjetASupprimer](const Projet& projet){
-		return projet.getNom() == nomProjetASupprimer;
-	});
-
-	_nomsProjetsSupprimer.emplace_back(nomProjetASupprimer);
+	_deleteProject<true>(nomProjetASupprimer);
 }
 
 void Manager::deleteElement(const std::string_view& nomProjet, const std::string_view& objetElement)
 {
-	getProject(nomProjet)->deleteElement(objetElement);
+	_deleteElement<true>(nomProjet, objetElement);
 }
 
 void Manager::save() const
@@ -96,7 +128,7 @@ void Manager::save() const
 	std::ranges::for_each(_projets, [](const Projet& projet){projet.save();});
 
 	std::ranges::for_each(_nomsProjetsSupprimer, [this](const std::string& nomProjetASupprimer){
-		std::cout<<std::filesystem::remove(std::filesystem::path(_pathToProjectDirectory/nomProjetASupprimer));
+		std::filesystem::remove(std::filesystem::path(_pathToProjectDirectory/nomProjetASupprimer));
 	});
 
 	_nomsProjetsSupprimer.clear();
@@ -129,7 +161,7 @@ std::vector<Projet>::iterator Manager::getProject(const std::string_view& nomPro
 
 	if (itProjet == _projets.end())
 	{
-		throw std::domain_error("Le nom du projet specifié ne correspond à aucun projet"s);
+		throw std::domain_error("Le nom du projet specifié ("+std::string(nomProjet)+") ne correspond à aucun projet"s);
 	}
 
 	return itProjet;
@@ -206,7 +238,7 @@ std::vector<Element>::iterator Projet::getElement(const std::string_view& objetE
 
 	if (itProjet == _elements->end())
 	{
-		throw std::domain_error("L'objet specifié ne correspond à aucun element"s);
+		throw std::domain_error("L'objet specifié ("+std::string(objetElement)+") ne correspond à aucun element"s);
 	}
 
 	return itProjet;
@@ -266,6 +298,11 @@ bool statusElementToBool(const StatusElement& status)
 StatusElement statusElementFromBool(const bool status)
 {
 	return status ? StatusElement::Fini : StatusElement::ToDo;
+}
+
+std::string statusElementToString(const StatusElement& status)
+{
+	return statusElementToBool(status) ? "fini"s : "à faire"s;
 }
 
 }

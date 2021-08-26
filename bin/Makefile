@@ -244,33 +244,6 @@ source/vueOrdi1/mainPage.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/mainPage.cpp.s
 .PHONY : source/vueOrdi1/mainPage.cpp.s
 
-source/vueOrdi1/scrollPanel.obj: source/vueOrdi1/scrollPanel.cpp.obj
-.PHONY : source/vueOrdi1/scrollPanel.obj
-
-# target to build an object file
-source/vueOrdi1/scrollPanel.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/source/vueOrdi1/scrollPanel.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/scrollPanel.cpp.obj
-.PHONY : source/vueOrdi1/scrollPanel.cpp.obj
-
-source/vueOrdi1/scrollPanel.i: source/vueOrdi1/scrollPanel.cpp.i
-.PHONY : source/vueOrdi1/scrollPanel.i
-
-# target to preprocess a source file
-source/vueOrdi1/scrollPanel.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/source/vueOrdi1/scrollPanel.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/scrollPanel.cpp.i
-.PHONY : source/vueOrdi1/scrollPanel.cpp.i
-
-source/vueOrdi1/scrollPanel.s: source/vueOrdi1/scrollPanel.cpp.s
-.PHONY : source/vueOrdi1/scrollPanel.s
-
-# target to generate assembly for a file
-source/vueOrdi1/scrollPanel.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/source/vueOrdi1/scrollPanel.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/source/vueOrdi1/scrollPanel.cpp.s
-.PHONY : source/vueOrdi1/scrollPanel.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -293,9 +266,6 @@ help:
 	@echo ... source/vueOrdi1/mainPage.obj
 	@echo ... source/vueOrdi1/mainPage.i
 	@echo ... source/vueOrdi1/mainPage.s
-	@echo ... source/vueOrdi1/scrollPanel.obj
-	@echo ... source/vueOrdi1/scrollPanel.i
-	@echo ... source/vueOrdi1/scrollPanel.s
 .PHONY : help
 
 

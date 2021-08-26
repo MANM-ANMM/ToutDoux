@@ -27,7 +27,6 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/Data/Document/Cpp/ToutDoux
 set(OLD_GLOB
   "D:/Data/Document/Cpp/ToutDoux/source/modele/ToutDoux.cpp"
   "D:/Data/Document/Cpp/ToutDoux/source/vueOrdi1/mainPage.cpp"
-  "D:/Data/Document/Cpp/ToutDoux/source/vueOrdi1/scrollPanel.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

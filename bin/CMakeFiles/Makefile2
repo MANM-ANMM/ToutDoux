@@ -82,12 +82,12 @@ clean: CMakeFiles/ToutDouxTest.dir/clean
 CMakeFiles/ToutDoux.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDoux.dir\build.make CMakeFiles/ToutDoux.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Data\Document\Cpp\ToutDoux\bin\CMakeFiles --progress-num=1,2,3,4,5 "Built target ToutDoux"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Data\Document\Cpp\ToutDoux\bin\CMakeFiles --progress-num=1,2,3,4 "Built target ToutDoux"
 .PHONY : CMakeFiles/ToutDoux.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ToutDoux.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Data\Document\Cpp\ToutDoux\bin\CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Data\Document\Cpp\ToutDoux\bin\CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/ToutDoux.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Data\Document\Cpp\ToutDoux\bin\CMakeFiles 0
 .PHONY : CMakeFiles/ToutDoux.dir/rule
@@ -108,12 +108,12 @@ CMakeFiles/ToutDoux.dir/clean:
 CMakeFiles/ToutDouxTest.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ToutDouxTest.dir\build.make CMakeFiles/ToutDouxTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Data\Document\Cpp\ToutDoux\bin\CMakeFiles --progress-num=6,7,8,9,10 "Built target ToutDouxTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Data\Document\Cpp\ToutDoux\bin\CMakeFiles --progress-num=5,6,7,8 "Built target ToutDouxTest"
 .PHONY : CMakeFiles/ToutDouxTest.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ToutDouxTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Data\Document\Cpp\ToutDoux\bin\CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Data\Document\Cpp\ToutDoux\bin\CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/ToutDouxTest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Data\Document\Cpp\ToutDoux\bin\CMakeFiles 0
 .PHONY : CMakeFiles/ToutDouxTest.dir/rule

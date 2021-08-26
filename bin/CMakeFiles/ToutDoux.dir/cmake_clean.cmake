@@ -5,8 +5,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/ToutDoux.dir/source/modele/ToutDoux.cpp.obj.d"
   "CMakeFiles/ToutDoux.dir/source/vueOrdi1/mainPage.cpp.obj"
   "CMakeFiles/ToutDoux.dir/source/vueOrdi1/mainPage.cpp.obj.d"
-  "CMakeFiles/ToutDoux.dir/source/vueOrdi1/scrollPanel.cpp.obj"
-  "CMakeFiles/ToutDoux.dir/source/vueOrdi1/scrollPanel.cpp.obj.d"
   "ToutDoux.exe"
   "ToutDoux.exe.manifest"
   "ToutDoux.pdb"
