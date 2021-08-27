@@ -43,23 +43,6 @@ Manager::~Manager()
 	}
 }
 
-void Manager::annuler()
-{
-	if (pileAnnulation.empty()) return;
-	auto rollback = pileAnnulation.top().roleback;
-	std::cerr<<pileAnnulation.top().expliquation<<'\n';
-	pileAnnulation.pop();
-	rollback();
-}
-
-void Manager::annulerAnnulation()
-{
-	if (pileAnnulationAnnulation.empty()) return;
-	auto rollback = pileAnnulationAnnulation.top().roleback;
-	pileAnnulationAnnulation.pop();
-	rollback();
-}
-
 bool Manager::verifyNomNouveauProjet(const std::string_view& nom) const
 {
 	if (nom.empty()) return false;
@@ -97,30 +80,41 @@ const std::vector<Element> Manager::getProjectElements(const std::string_view& n
 	return getProject(nomProjet)->getElements();
 }
 
+
 void Manager::markElementAs(const std::string_view& nomProjet, const std::string_view& objetElement, const StatusElement& nouveauStatus)
 {
-	_markElementAs<true>(nomProjet, objetElement, nouveauStatus);
+	getProject(nomProjet)->markElementAs(objetElement, nouveauStatus);
 }
 
 void Manager::addElement(const std::string_view& nomProjet, const std::string_view& objetNouvelElement)
 {
-	_addElement<true>(nomProjet, objetNouvelElement);
+	getProject(nomProjet)->addElement(objetNouvelElement);
 }
 
 
 void Manager::addProject(const std::string_view& nomNouveauProjet)
 {
-	_addProject<true>(nomNouveauProjet);
+	if (std::ranges::any_of(_projets, [&nomNouveauProjet](const Projet& projet){
+		return projet.getNom() == nomNouveauProjet;}
+	))
+	{
+		throw std::domain_error("Le nom du nouveau projet est deja pris"s);
+	}
+	_projets.emplace_back(_pathToProjectDirectory/nomNouveauProjet);
 }
 
 void Manager::deleteProject(const std::string_view& nomProjetASupprimer)
 {
-	_deleteProject<true>(nomProjetASupprimer);
+	std::erase_if(_projets, [&nomProjetASupprimer](const Projet& projet){
+		return projet.getNom() == nomProjetASupprimer;
+	});
+
+	_nomsProjetsSupprimer.emplace_back(nomProjetASupprimer);
 }
 
 void Manager::deleteElement(const std::string_view& nomProjet, const std::string_view& objetElement)
 {
-	_deleteElement<true>(nomProjet, objetElement);
+	getProject(nomProjet)->deleteElement(objetElement);
 }
 
 void Manager::save() const

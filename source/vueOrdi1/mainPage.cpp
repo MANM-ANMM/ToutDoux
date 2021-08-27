@@ -43,7 +43,7 @@ void Run()
 	form fenetre;
 	fenetre.caption("ToutDoux");
 
-	fenetre.div("<vert<fit boutonsAnnulation><<vert min=20 fit <fit boutonsProjets><projetsListbox>>| <vert min=20 <fit boutonsElements><elementsListbox>>>"s);
+	fenetre.div("<<vert min=20 fit <fit boutonsProjets><projetsListbox>>| <vert min=20 <fit boutonsElements><elementsListbox>>"s);
 
 	//elementsListbox
 	listbox elementsListbox {fenetre};
@@ -170,6 +170,7 @@ void Run()
 
 	fenetre["boutonsProjets"] <<ajouterProjetBouton<<supprimerProjetBouton;
 
+	/*
 	//boutons annulation
 	button annulerBouton{fenetre, "Annuler"};
 	annulerBouton.events().click([&manager, &actualiseProjetsListbox, &actualiseElementsListbox]{
@@ -185,8 +186,9 @@ void Run()
 		actualiseElementsListbox();
 	});
 
-	fenetre["boutonsAnnulation"]<<annulerBouton<<desannulerBouton;
 
+	fenetre["boutonsAnnulation"]<<annulerBouton<<desannulerBouton;
+*/
 	fenetre.collocate();
 
 	fenetre.show();
