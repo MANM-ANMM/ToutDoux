@@ -131,7 +131,7 @@ void Run()
 		projetsListbox.clear();
 
 		std::vector<std::string> nomsProjets = manager.getProjectsNames();
-		for (const std::string nomProjet : nomsProjets) {
+		for (const std::string& nomProjet : nomsProjets) {
 			projetsListbox.at(0).append(nomProjet);
 		}
 	};

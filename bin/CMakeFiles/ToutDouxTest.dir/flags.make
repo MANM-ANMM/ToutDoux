@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = @CMakeFiles/ToutDouxTest.dir/includes_CXX.rsp
 
-CXX_FLAGS = -Wall -Wextra -pedantic -Wconversion -fdiagnostics-color=always -DNANA_FILESYSTEM_FORCE -std=gnu++2a
+CXX_FLAGS = -O3 -DNDEBUG -Wall -Wextra -pedantic -Wconversion -fdiagnostics-color=always -DNANA_FILESYSTEM_FORCE -std=gnu++20
 
