@@ -16,3 +16,4 @@ UT : https://github.com/boost-ext/ut
 
 ### Other
 Developped by Martin Rouault.
+My goal was to use CMake for a small training project.
