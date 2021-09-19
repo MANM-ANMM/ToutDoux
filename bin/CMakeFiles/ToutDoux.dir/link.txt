@@ -1,3 +1,0 @@
-D:\msys64\mingw64\bin\cmake.exe -E rm -f CMakeFiles\ToutDoux.dir/objects.a
-D:\msys64\mingw64\bin\ar.exe qc CMakeFiles\ToutDoux.dir/objects.a @CMakeFiles\ToutDoux.dir\objects1.rsp
-D:\msys64\mingw64\bin\g++.exe -O3 -DNDEBUG -Wl,--whole-archive CMakeFiles\ToutDoux.dir/objects.a -Wl,--no-whole-archive -o ToutDoux.exe -Wl,--out-implib,libToutDoux.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ToutDoux.dir\linklibs.rsp
