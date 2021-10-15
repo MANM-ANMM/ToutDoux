@@ -5,6 +5,7 @@
 #include <string_view>
 #include <fstream>
 #include <stdexcept>
+#include <regex>
 
 #include <iostream>
 
@@ -43,11 +44,14 @@ Manager::~Manager()
 	}
 }
 
+bool matchNomFichier(const std::string& nom) {
+	std::regex expr{"^[[:alnum:]_]+[[:alnum:]._]*$"};
+	return std::regex_match(nom, expr);
+}
+
 bool Manager::verifyNomNouveauProjet(const std::string_view& nom) const
 {
-	if (nom.empty()) return false;
-	if (nom.starts_with(' ') || nom.starts_with('.')) return false;
-	if (std::ranges::any_of(nom, [](const char c){return c=='\\' || c == '/';})) return false;
+	if (!matchNomFichier(std::string{nom})) return false;
 
 	const std::vector<std::string> nomsProjets = getProjectsNames();
 	if (std::ranges::any_of(nomsProjets, [&nom](const std::string_view& n){return n == nom;})) return false;
@@ -57,9 +61,8 @@ bool Manager::verifyNomNouveauProjet(const std::string_view& nom) const
 
 bool Manager::verifyObjetNouvelElement(const std::string_view& nomProjet, const std::string_view& objetNouvelElement)
 {
-	if (objetNouvelElement.empty()) return false;
-	if (objetNouvelElement.starts_with(' ') || objetNouvelElement.starts_with('.')) return false;
-	if (std::ranges::any_of(objetNouvelElement, [](const char c){return c=='\\' || c == '/';})) return false;
+	std::regex expr{"^[[:alnum:]()\\[\\]{}]+[[:alnum:].!? ()\\[\\]{}]*$"};
+	if (!std::regex_match(std::string{objetNouvelElement}, expr)) return false;
 
 	const std::vector<Element> objetsElements = getProjectElements(nomProjet);
 

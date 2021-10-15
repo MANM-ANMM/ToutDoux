@@ -42,13 +42,18 @@ void Run()
 
 	form fenetre;
 	fenetre.caption("ToutDoux");
+	fenetre.size({600,400});
 
 	fenetre.div("<<vert min=20 fit <fit boutonsProjets><projetsListbox>>| <vert min=20 <fit boutonsElements><elementsListbox>>"s);
+
 
 	//elementsListbox
 	listbox elementsListbox {fenetre};
 	fenetre["elementsListbox"]<<elementsListbox;
-	elementsListbox.append_header("Elements"s, 1000);
+	elementsListbox.append_header("Elements"s);
+	elementsListbox.events().resized([&elementsListbox](const arg_resized& arg){
+		elementsListbox.column_at(0).width(arg.width-10);
+	});
 
 	elementsListbox.checkable(true);
 
@@ -112,7 +117,10 @@ void Run()
 	//projetsListbox
 	listbox projetsListbox {fenetre};
 	fenetre["projetsListbox"]<<projetsListbox;
-	projetsListbox.append_header("Projets"s, 500);
+	projetsListbox.append_header("Projets"s);
+	projetsListbox.events().resized([&projetsListbox](const arg_resized& arg){
+		projetsListbox.column_at(0).width(arg.width-10);
+	});
 
 	projetsListbox.checkable(false);
 
