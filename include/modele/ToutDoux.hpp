@@ -55,6 +55,7 @@ public:
 
 	std::vector<std::string> getProjectsNames() const;
 	const std::vector<Element> getProjectElements(const std::string_view& nomProjet);
+	bool projetExiste(const std::string_view& nomProjet) const;
 
 	void markElementAs(const std::string_view& nomProjet, const std::string_view& objetElement, const StatusElement& nouveauStatus);
 

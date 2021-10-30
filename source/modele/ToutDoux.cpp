@@ -83,6 +83,11 @@ const std::vector<Element> Manager::getProjectElements(const std::string_view& n
 	return getProject(nomProjet)->getElements();
 }
 
+bool Manager::projetExiste(const std::string_view& nomProjet) const {
+	return std::ranges::find_if(_projets, [&nomProjet](const Projet& projet){return projet.getNom() == nomProjet;}) != _projets.end();
+}
+
+
 
 void Manager::markElementAs(const std::string_view& nomProjet, const std::string_view& objetElement, const StatusElement& nouveauStatus)
 {

@@ -1,6 +1,5 @@
 #include "vueOrdi1/mainPage.hpp"
 
-
 #include <string>
 #include <iostream>
 #include <string_view>
@@ -16,7 +15,6 @@
 #include <nana/gui/widgets/listbox.hpp>
 
 #include "modele/ToutDoux.hpp"
-
 
 namespace vueOrdi1
 {
@@ -59,12 +57,16 @@ void Run()
 
 	auto actualiseElementsListbox = [&manager, &elementsListbox, &nomProjetCourrant]()
 	{
-		std::vector<Element> elements = manager.getProjectElements(nomProjetCourrant);
 		elementsListbox.clear();
-		for (const Element& element : elements)
-		{
-			elementsListbox.at(0).append(element.objet);
-			elementsListbox.at(0).back().check(statusElementToBool(element.status));
+		try {
+			std::vector<Element> elements = manager.getProjectElements(nomProjetCourrant);
+			for (const Element& element : elements)
+			{
+				elementsListbox.at(0).append(element.objet);
+				elementsListbox.at(0).back().check(statusElementToBool(element.status));
+			}
+		} catch (const std::domain_error& err) {
+			
 		}
 	};
 
@@ -164,7 +166,7 @@ void Run()
 	});
 
 	button supprimerProjetBouton{fenetre, "Supprimer Projet"s};
-	supprimerProjetBouton.events().click([&manager, &projetsListbox, &actualiseProjetsListbox, &nomProjetCourrant]{
+	supprimerProjetBouton.events().click([&manager, &projetsListbox, &actualiseProjetsListbox, &actualiseElementsListbox, &nomProjetCourrant]{
 		if (projetsListbox.selected().empty()) return;
 		for (const auto& itemProjet: projetsListbox.selected())
 		{
@@ -174,29 +176,11 @@ void Run()
 		}
 		nomProjetCourrant = "";
 		actualiseProjetsListbox();
+		actualiseElementsListbox();
 	});
 
 	fenetre["boutonsProjets"] <<ajouterProjetBouton<<supprimerProjetBouton;
 
-	/*
-	//boutons annulation
-	button annulerBouton{fenetre, "Annuler"};
-	annulerBouton.events().click([&manager, &actualiseProjetsListbox, &actualiseElementsListbox]{
-		manager.annuler();
-		actualiseProjetsListbox();
-		actualiseElementsListbox();
-	});
-
-	button desannulerBouton{fenetre, "Desannuler"};
-	desannulerBouton.events().click([&manager, &actualiseProjetsListbox, &actualiseElementsListbox]{
-		manager.annulerAnnulation();
-		actualiseProjetsListbox();
-		actualiseElementsListbox();
-	});
-
-
-	fenetre["boutonsAnnulation"]<<annulerBouton<<desannulerBouton;
-*/
 	fenetre.collocate();
 
 	fenetre.show();
