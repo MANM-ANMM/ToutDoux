@@ -61,7 +61,7 @@ bool Manager::verifyNomNouveauProjet(const std::string_view& nom) const
 
 bool Manager::verifyObjetNouvelElement(const std::string_view& nomProjet, const std::string_view& objetNouvelElement)
 {
-	std::regex expr{"^[[:alnum:]()\\[\\]{}]+[[:alnum:].!? ()\\[\\]{}]*$"};
+	std::regex expr{"^[^[:blank:][:cntrl:]][^[:cntrl:]]*[^[:blank:][:cntrl:]]+$"};
 	if (!std::regex_match(std::string{objetNouvelElement}, expr)) return false;
 
 	const std::vector<Element> objetsElements = getProjectElements(nomProjet);
