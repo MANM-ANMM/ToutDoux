@@ -2,7 +2,7 @@
 A simple ToDo list
 
 ## Build 
-You can build thhis project using cmake (MSVC is not supported in the options (I haven't test it))
+You can build this project using cmake (MSVC is not supported in the options (I haven't test it))
 
 The bin folder contains a folder "projets" which contains files used/produced by ToutDoux.
 
