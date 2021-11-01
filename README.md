@@ -9,6 +9,8 @@ The bin folder contains a folder "projets" which contains files used/produced by
 ## Run
 When ToutDoux is launched from the command line, the project folder will be a subfolder of your working directory named "projets".
 
+# Generate documentation
+Run doxygen on the root of the project
 
 ## External libraries
 Nana : https://github.com/cnjinhao/nana
