@@ -1,6 +1,7 @@
 /**
- \brief Le modèle du projet ToutDoux
- \author Martin Rouault
+ *\file ToutDoux.hpp
+ *\brief Le modèle du projet ToutDoux
+ *\author Martin Rouault
  */
 
 #pragma once
@@ -22,24 +23,21 @@ enum class StatusElement : bool {
 
 /**
  \brief Convertie un StatusElement en bool
- \params
- [in] status Le status a convertir
+ \param [in] status Le status a convertir
  \return true si status == Fini, false sinon
  */
 bool statusElementToBool(const StatusElement& status);
 
 /**
  \brief Convertie un bool en StatusElement
- \params
- [in] status Le boolean à convertir
+ \param [in] status Le boolean à convertir
  \return Fini si status == true, ToDo sinon
  */
 StatusElement statusElementFromBool(const bool status);
 
 /**
   \brief Convertie un StatusElement en string
-  \params
-  [in] status le status a convertir
+  \param [in] status le status a convertir
   \return "fini" ou "à faire"
   */
 std::string statusElementToString(const StatusElement& status);
@@ -56,8 +54,7 @@ class Projet
 public:
 	/**
 	 \brief Construit un projet
-	 \params
-	 [in] pathProjet Le chemin du projet
+	 \param [in] pathProjet Le chemin du projet
 	 */
 	Projet(const std::filesystem::path& pathProjet);
 
@@ -69,21 +66,18 @@ public:
 
 	/**
 	 \brief Marque un élément comme étant Fini ou A faire
-	 \params
-	 [in] objetElement L'objet de l'élément
-	 [in] nouveauStatus Le nouveau status à donner
+	 \param [in] objetElement L'objet de l'élément
+	 \param [in] nouveauStatus Le nouveau status à donner
 	 */
 	void markElementAs(const std::string_view& objetElement, const StatusElement& nouveauStatus);
 	/**
 	 \brief Ajoute un nouvel élément à faire
-	 \params
-	 [in] objetNouvelElement L'objet du nouvel élément
+	 \param [in] objetNouvelElement L'objet du nouvel élément
 	 */
 	void addElement(const std::string_view& objetNouvelElement);
 	/**
 	 \brief Supprime un élément
-	 \params
-	 [in] objetElement L'objet de l'élément à supprimer
+	 \param [in] objetElement L'objet de l'élément à supprimer
 	 */
 	void deleteElement(const std::string_view& objetElement);
 
@@ -110,9 +104,8 @@ class Manager
 public:
 	/**
 	 \brief Construit un nouveau Manager
-	 \params
-	 [in] pathToProjectDirectory Le repertoire dans lequel le manager gère les projets
-	 [in] autoSaveActivated Si activé, le manager sauvegarde les projets à sa destruction
+	 \param [in] pathToProjectDirectory Le repertoire dans lequel le manager gère les projets
+	 \param [in] autoSaveActivated Si activé, le manager sauvegarde les projets à sa destruction
 	 */
 	Manager(const std::string_view& pathToProjectDirectory, const bool autoSaveActivated = false);
 	~Manager();
@@ -125,68 +118,59 @@ public:
 
 	/**
 	 \brief Rends les éléments d'un projet donné
-	 \params
-	 [in] nomProjet Le projet duquel les éléments sont retourné
+	 \param [in] nomProjet Le projet duquel les éléments sont retourné
 	 \return Les éléments du projet
 	 */
 	const std::vector<Element> getProjectElements(const std::string_view& nomProjet);
 	/**
 	 \brief Indique si un projet existe
-	 \params
-	 [in] nomProjet Le nom de projet à tester
+	 \param [in] nomProjet Le nom de projet à tester
 	 \return true si le projet existe, false sinon
 	 */
 	bool projetExiste(const std::string_view& nomProjet) const;
 
 	/**
 	 \brief Marque un élément d'un projet comme étant Fini ou A faire
-	 \params
-	 [in] nomProjet Le projet contenant l'élément en question
-	 [in] objetElement L'objet de l'élément
-	 [in] nouveauStatus Le nouveau status à donner
+	 \param [in] nomProjet Le projet contenant l'élément en question
+	 \param [in] objetElement L'objet de l'élément
+	 \param [in] nouveauStatus Le nouveau status à donner
 	 */
 	void markElementAs(const std::string_view& nomProjet, const std::string_view& objetElement, const StatusElement& nouveauStatus);
 
 	/**
 	 \brief Ajoute un élément à un projet
-	 \params
-	 [in] nomProjet Le nom du projet en question
-	 [in] objetNouvelElement L'objet du nouvel élément
+	 \param [in] nomProjet Le nom du projet en question
+	 \param [in] objetNouvelElement L'objet du nouvel élément
 	 */
 	void addElement(const std::string_view& nomProjet, const std::string_view& objetNouvelElement);
 	/**
 	 \brief Créer un nouveau projet
-	 \params
-	 [in] nomNouveauProjet Le nom du nouveau projet
+	 \param [in] nomNouveauProjet Le nom du nouveau projet
 	 */
 	void addProject(const std::string_view& nomNouveauProjet);
 
 	/**
 	 \brief Suppprime un projet
-	 \params
-	 [in] nomProjetASupprimer Le nom du projet à supprimer
+	 \param [in] nomProjetASupprimer Le nom du projet à supprimer
 	 */
 	void deleteProject(const std::string_view& nomProjetASupprimer);
 	/**
 	 \brief Supprime un élément d'un projet
-	 \params
-	 [in] nomProjet Le nom du projet en question
-	 [in] objetElement L'objet de l'élément à supprimer
+	 \param [in] nomProjet Le nom du projet en question
+	 \param [in] objetElement L'objet de l'élément à supprimer
 	 */
 	void deleteElement(const std::string_view& nomProjet, const std::string_view& objetElement);
 
 	/**
 	 \brief Verifie la validité d'un nom de projet
-	 \params
-	 [in] nom Le nom à tester
+	 \param [in] nom Le nom à tester
 	 \return true si le nom est valide, false sinon
 	 */
 	bool verifyNomNouveauProjet(const std::string_view& nom) const;
 	/**
 	 \brief Verifie la validité d'un objet pour un nouvel élément d'un projet
-	 \params
-	 [in] nomProjet Le nom du projet en question
-	 [in] objetNouvelElement L'objet à tester
+	 \param [in] nomProjet Le nom du projet en question
+	 \param [in] objetNouvelElement L'objet à tester
 	 \return true si l'objet est valide, false sinon
 	 */
 	bool verifyObjetNouvelElement(const std::string_view& nomProjet, const std::string_view& objetNouvelElement);

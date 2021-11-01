@@ -31,6 +31,9 @@
 *.out
 *.app
 
+#Documentation (can be generated with doxygen)
+./doc/**
+
 #CMake
 CMakeLists.txt.user
 CMakeCache.txt
